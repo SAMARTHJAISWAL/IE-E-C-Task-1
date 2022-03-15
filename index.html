@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name ="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Employee Interests Survey Form</title>
+    </head>
+    <body >
+    <center>
+
+        <h1>Employee Interests Survey form</h1>
+        <div>
+            <label for="name">Enter Your Name:</label>
+        <input type="text" id="name" class="main" />
+        </div>
+        <br>
+
+        <div>
+            <label for="dept">Enter Your department:</label>
+        <input type="text" id="name" class="main" />
+        </div>
+        <br>
+
+        <div>
+            <label for="intro">Tell us a little about yourself:</label>
+        <textarea rows="3" cols="30">
+            Enter data 
+            </textarea><br>
+        </div>
+        <br>
+
+        <div>
+            <p>Do you exercise at home ?
+                <input type="radio" name="ex" id="Yes" value="Yes" class="main"/>
+                <label for="Yes">
+                Yes
+                </label>
+                <input type ="radio" name="ex" id="No" value="No" class="main"/>
+                <label for="No">
+                No
+                </label>
+                </p>
+        </div>
+
+        <br>
+        <p>
+            How do you like to read about your favorite topics?
+        </p>
+        <span>
+            <label for="Books">
+                <input type="checkbox" name="Books" id="Books" class="main"> Books
+             </label>
+             <label for="Online Resources">
+                <input type="checkbox" name="Online Resources" id="Online Resources" class="main"> Online Resources
+             </label>
+             <label for="Phone Apps">
+                <input type="checkbox" name="Phone Apps" id="Phone Apps" class="main"> Phone Apps
+             </label>
+             <label for="Magazines">
+                <input type="checkbox" name="Magazines" id="Magazines" class="main"> Magazines
+             </label>
+            </span>
+            <p> What genre of movies do you like?
+                <select name="movies" id="movies">
+                             <option value="Comedy">Comedy</option>
+                             <option value="Suspense">Suspense</option>
+                             <option value="Thrill">Thrill</option>
+                             <option value="Horror">Horror</option> <br>
+                
+                         </select>
+                </p>
+                <br>
+                <button type="button" id="btn">Submit Form</button>
+                <br>
+
+            </center>
+    </body>
+
+</html>
