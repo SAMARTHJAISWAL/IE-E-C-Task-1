@@ -1,80 +1,113 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name ="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Employee Interests Survey Form</title>
+        <style>
+            body {
+                font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+                text-align: center;
+                margin: 0;
+                padding: 1rem;
+            }
+
+            form {
+                max-width: 40rem;
+                margin: 0 auto;
+            }
+
+            .field {
+                margin: 1.25rem 0;
+            }
+
+            input[type="text"],
+            textarea,
+            select {
+                font: inherit;
+                max-width: 100%;
+            }
+
+            fieldset {
+                border: none;
+                margin: 1.25rem 0;
+                padding: 0;
+            }
+
+            legend {
+                margin: 0 auto 0.5rem;
+            }
+
+            .options label {
+                display: inline-block;
+                margin: 0.25rem 0.5rem;
+            }
+
+            #result {
+                margin-top: 1.5rem;
+                font-weight: 600;
+            }
+        </style>
     </head>
-    <body >
-    <center>
-
+    <body>
         <h1>Employee Interests Survey form</h1>
-        <div>
-            <label for="name">Enter Your Name:</label>
-        <input type="text" id="name" class="main" />
-        </div>
-        <br>
 
-        <div>
-            <label for="dept">Enter Your department:</label>
-        <input type="text" id="name" class="main" />
-        </div>
-        <br>
+        <form id="survey">
+            <div class="field">
+                <label for="name">Enter Your Name:</label>
+                <input type="text" id="name" name="name" required />
+            </div>
 
-        <div>
-            <label for="intro">Tell us a little about yourself:</label>
-        <textarea rows="3" cols="30">
-            Enter data 
-            </textarea><br>
-        </div>
-        <br>
+            <div class="field">
+                <label for="dept">Enter Your department:</label>
+                <input type="text" id="dept" name="dept" />
+            </div>
 
-        <div>
-            <p>Do you exercise at home ?
-                <input type="radio" name="ex" id="Yes" value="Yes" class="main"/>
-                <label for="Yes">
-                Yes
-                </label>
-                <input type ="radio" name="ex" id="No" value="No" class="main"/>
-                <label for="No">
-                No
-                </label>
-                </p>
-        </div>
+            <div class="field">
+                <label for="intro">Tell us a little about yourself:</label><br>
+                <textarea id="intro" name="intro" rows="3" cols="30" placeholder="Enter data"></textarea>
+            </div>
 
-        <br>
-        <p>
-            How do you like to read about your favorite topics?
-        </p>
-        <span>
-            <label for="Books">
-                <input type="checkbox" name="Books" id="Books" class="main"> Books
-             </label>
-             <label for="Online Resources">
-                <input type="checkbox" name="Online Resources" id="Online Resources" class="main"> Online Resources
-             </label>
-             <label for="Phone Apps">
-                <input type="checkbox" name="Phone Apps" id="Phone Apps" class="main"> Phone Apps
-             </label>
-             <label for="Magazines">
-                <input type="checkbox" name="Magazines" id="Magazines" class="main"> Magazines
-             </label>
-            </span>
-            <p> What genre of movies do you like?
+            <fieldset>
+                <legend>Do you exercise at home?</legend>
+                <div class="options">
+                    <label><input type="radio" name="exercise" value="Yes" /> Yes</label>
+                    <label><input type="radio" name="exercise" value="No" /> No</label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>How do you like to read about your favorite topics?</legend>
+                <div class="options">
+                    <label><input type="checkbox" name="reading" value="Books"> Books</label>
+                    <label><input type="checkbox" name="reading" value="Online Resources"> Online Resources</label>
+                    <label><input type="checkbox" name="reading" value="Phone Apps"> Phone Apps</label>
+                    <label><input type="checkbox" name="reading" value="Magazines"> Magazines</label>
+                </div>
+            </fieldset>
+
+            <div class="field">
+                <label for="movies">What genre of movies do you like?</label>
                 <select name="movies" id="movies">
-                             <option value="Comedy">Comedy</option>
-                             <option value="Suspense">Suspense</option>
-                             <option value="Thrill">Thrill</option>
-                             <option value="Horror">Horror</option> <br>
-                
-                         </select>
-                </p>
-                <br>
-                <button type="button" id="btn">Submit Form</button>
-                <br>
+                    <option value="Comedy">Comedy</option>
+                    <option value="Suspense">Suspense</option>
+                    <option value="Thrill">Thrill</option>
+                    <option value="Horror">Horror</option>
+                </select>
+            </div>
 
-            </center>
+            <button type="submit" id="btn">Submit Form</button>
+            <p id="result" role="status" aria-live="polite"></p>
+        </form>
+
+        <script>
+            // No backend: the form is handled entirely in the browser.
+            document.getElementById("survey").addEventListener("submit", function (event) {
+                event.preventDefault();
+                var name = document.getElementById("name").value.trim();
+                document.getElementById("result").textContent =
+                    "Thanks, " + name + "! Your responses were recorded locally (nothing is sent anywhere).";
+            });
+        </script>
     </body>
-
 </html>
