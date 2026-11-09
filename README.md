@@ -13,6 +13,8 @@ or stored anywhere. Name is the only required field.
 
 **Live page:** https://samarthjaiswal.github.io/IE-E-C-Task-1/ (served by GitHub Pages from `main`)
 
+![The survey form: name, department, a short introduction, exercise, reading habits and favourite movie genre](og.png)
+
 ## How to run locally
 
 Open `index.html` in a browser, or serve the folder:
